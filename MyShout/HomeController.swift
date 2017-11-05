@@ -25,7 +25,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView?.delegate = self
     }
     
-    let dummyController = UIViewController()
+    let detailSettingsController = UIViewController()
     
     @objc func handleMenuButtonTapped(){
         settingsController.homeController = self

@@ -17,7 +17,7 @@ class SettingsCell: UICollectionViewCell {
         backgroundColor = UIColor.white
     }
     
-    let settingOneLabel: UILabel = {
+    let settingTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Settin One Label"
         label.font = UIFont(name: "Futura", size: 16)
@@ -38,7 +38,7 @@ class SettingsCell: UICollectionViewCell {
     
     func setupViews(){
         addSubview(settingsImageView)
-        addSubview(settingOneLabel)
+        addSubview(settingTitleLabel)
         
         //Settings Icon
         settingsImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
@@ -47,8 +47,8 @@ class SettingsCell: UICollectionViewCell {
         settingsImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
         //Settings Name
-        settingOneLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        settingOneLabel.leftAnchor.constraint(equalTo: settingsImageView.rightAnchor, constant: 16).isActive = true
+        settingTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        settingTitleLabel.leftAnchor.constraint(equalTo: settingsImageView.rightAnchor, constant: 16).isActive = true
         
     }
     

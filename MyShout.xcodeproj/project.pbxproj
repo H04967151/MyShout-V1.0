@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		286302A91FAFA33C00B39E05 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286302A81FAFA33C00B39E05 /* LoginController.swift */; };
+		286302AB1FAFA62700B39E05 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286302AA1FAFA62700B39E05 /* LoginView.swift */; };
 		28FDA42C1F364135005D9711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDA42B1F364135005D9711 /* AppDelegate.swift */; };
 		28FDA42E1F364135005D9711 /* EventsFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDA42D1F364135005D9711 /* EventsFeedController.swift */; };
 		28FDA4311F364135005D9711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FDA42F1F364135005D9711 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		1B1CD407AEC4F74D3374962E /* Pods-MyShoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyShoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyShoutTests/Pods-MyShoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1DE035BF471693E17B7898C4 /* Pods-MyShoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyShoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyShoutUITests/Pods-MyShoutUITests.release.xcconfig"; sourceTree = "<group>"; };
 		286302A81FAFA33C00B39E05 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		286302AA1FAFA62700B39E05 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		28FDA4281F364135005D9711 /* MyShout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyShout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FDA42B1F364135005D9711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28FDA42D1F364135005D9711 /* EventsFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsFeedController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				28FDA46C1F3A1600005D9711 /* SettingsCell.swift */,
 				28FDA4721F3B14FC005D9711 /* HomeCell.swift */,
 				28FDA4761F3B353B005D9711 /* AddEventView.swift */,
+				286302AA1FAFA62700B39E05 /* LoginView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				28FDA4621F39BC7E005D9711 /* EventObjectModel.swift in Sources */,
 				28FDA4711F3B148B005D9711 /* HomeController.swift in Sources */,
 				286302A91FAFA33C00B39E05 /* LoginController.swift in Sources */,
+				286302AB1FAFA62700B39E05 /* LoginView.swift in Sources */,
 				28FDA4771F3B353B005D9711 /* AddEventView.swift in Sources */,
 				28FDA46D1F3A1600005D9711 /* SettingsCell.swift in Sources */,
 				28FDA4751F3B1BBE005D9711 /* HomeMenuModel.swift in Sources */,

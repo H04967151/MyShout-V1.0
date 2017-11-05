@@ -128,7 +128,7 @@ class AddEventView: UIView {
         button.layer.borderColor = UIColor(red:0.22, green:0.21, blue:0.23, alpha:1.00).cgColor
         button.layer.borderWidth = 8
         
-        button.addTarget(self, action: #selector (AddEventController.userDidTappSaveButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector (AddEventController.userDidTapSaveButton), for: .touchUpInside)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

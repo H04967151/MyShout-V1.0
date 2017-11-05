@@ -12,7 +12,7 @@ import GooglePlacePicker
 
 class AddEventController: UIViewController {
     
-    let aeView = AddEventView()
+    let addEventView = AddEventView()
     let picker = UIDatePicker()
 
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class AddEventController: UIViewController {
         setupViews()
         setupNavBarItems()
         createDatePicker()
-        aeView.descTextView.delegate = self
+        addEventView.descTextView.delegate = self
     }
     
     func createDatePicker(){
@@ -30,8 +30,8 @@ class AddEventController: UIViewController {
         let done = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(datePickerDoneButtonPressed))
         toolBar.setItems([done], animated: true)
         
-        aeView.dateTextField.inputAccessoryView = toolBar
-        aeView.dateTextField.inputView = picker
+        addEventView.dateTextField.inputAccessoryView = toolBar
+        addEventView.dateTextField.inputView = picker
     }
     
     @objc func datePickerDoneButtonPressed(){
@@ -42,7 +42,7 @@ class AddEventController: UIViewController {
         
         let dateString = formatter.string(from: picker.date)
         
-        aeView.dateTextField.text = "\(dateString)"
+        addEventView.dateTextField.text = "\(dateString)"
         self.view.endEditing(true)
     }
     
@@ -52,75 +52,75 @@ class AddEventController: UIViewController {
         view.backgroundColor = UIColor.white
 
         //Image View
-        view.addSubview(aeView.addImageView)
-        aeView.addImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        aeView.addImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        aeView.addImageView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        aeView.addImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        view.addSubview(addEventView.addImageView)
+        addEventView.addImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        addEventView.addImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        addEventView.addImageView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        addEventView.addImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         //Titel Label
-        view.addSubview(aeView.eventTitleTextField)
-        aeView.eventTitleTextField.topAnchor.constraint(equalTo: aeView.addImageView.bottomAnchor, constant: 8).isActive = true
-        aeView.eventTitleTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
-        aeView.eventTitleTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        aeView.eventTitleTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        view.addSubview(addEventView.eventTitleTextField)
+        addEventView.eventTitleTextField.topAnchor.constraint(equalTo: addEventView.addImageView.bottomAnchor, constant: 8).isActive = true
+        addEventView.eventTitleTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
+        addEventView.eventTitleTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        addEventView.eventTitleTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         //Description Text View
-        view.addSubview(aeView.descTextView)
-        aeView.descTextView.topAnchor.constraint(equalTo: aeView.eventTitleTextField.bottomAnchor, constant: 8).isActive = true
-        aeView.descTextView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
-        aeView.descTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        aeView.descTextView.heightAnchor.constraint(equalToConstant: 90).isActive = true
+        view.addSubview(addEventView.descTextView)
+        addEventView.descTextView.topAnchor.constraint(equalTo: addEventView.eventTitleTextField.bottomAnchor, constant: 8).isActive = true
+        addEventView.descTextView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
+        addEventView.descTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        addEventView.descTextView.heightAnchor.constraint(equalToConstant: 90).isActive = true
         
         //Description Label Placeholder
-        view.addSubview(aeView.descriptionPlaceholderText)
-        aeView.descriptionPlaceholderText.topAnchor.constraint(equalTo: aeView.eventTitleTextField.bottomAnchor, constant: 16).isActive = true
-        aeView.descriptionPlaceholderText.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
-        aeView.descriptionPlaceholderText.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        aeView.descriptionPlaceholderText.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 7).isActive = true
+        view.addSubview(addEventView.descriptionPlaceholderText)
+        addEventView.descriptionPlaceholderText.topAnchor.constraint(equalTo: addEventView.eventTitleTextField.bottomAnchor, constant: 16).isActive = true
+        addEventView.descriptionPlaceholderText.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
+        addEventView.descriptionPlaceholderText.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        addEventView.descriptionPlaceholderText.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 7).isActive = true
         
         //Date Icon
-        view.addSubview(aeView.calIcon)
-        aeView.calIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        aeView.calIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        aeView.calIcon.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
-        aeView.calIcon.topAnchor.constraint(equalTo: aeView.descTextView.bottomAnchor, constant: 22).isActive = true
+        view.addSubview(addEventView.calIcon)
+        addEventView.calIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        addEventView.calIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        addEventView.calIcon.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
+        addEventView.calIcon.topAnchor.constraint(equalTo: addEventView.descTextView.bottomAnchor, constant: 22).isActive = true
         
         //Date Label
-        view.addSubview(aeView.dateTextField)
-        aeView.dateTextField.topAnchor.constraint(equalTo: aeView.descTextView.bottomAnchor, constant: 16).isActive = true
-        aeView.dateTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
-        aeView.dateTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        aeView.dateTextField.leftAnchor.constraint(equalTo: aeView.calIcon.rightAnchor, constant: 8).isActive = true
+        view.addSubview(addEventView.dateTextField)
+        addEventView.dateTextField.topAnchor.constraint(equalTo: addEventView.descTextView.bottomAnchor, constant: 16).isActive = true
+        addEventView.dateTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
+        addEventView.dateTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        addEventView.dateTextField.leftAnchor.constraint(equalTo: addEventView.calIcon.rightAnchor, constant: 8).isActive = true
         
         //Location Icon
-        view.addSubview(aeView.locationIcon)
-        aeView.locationIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        aeView.locationIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        aeView.locationIcon.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
-        aeView.locationIcon.topAnchor.constraint(equalTo: aeView.dateTextField.bottomAnchor, constant: 22).isActive = true
+        view.addSubview(addEventView.locationIcon)
+        addEventView.locationIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        addEventView.locationIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        addEventView.locationIcon.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
+        addEventView.locationIcon.topAnchor.constraint(equalTo: addEventView.dateTextField.bottomAnchor, constant: 22).isActive = true
         
         
         //Location Name Label
-        view.addSubview(aeView.locationNameTextField)
-        aeView.locationNameTextField.topAnchor.constraint(equalTo: aeView.dateTextField.bottomAnchor, constant: 16).isActive = true
-        aeView.locationNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -42).isActive = true
-        aeView.locationNameTextField.leftAnchor.constraint(equalTo: aeView.locationIcon.rightAnchor, constant: 8).isActive = true
-        aeView.locationNameTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        view.addSubview(addEventView.locationNameTextField)
+        addEventView.locationNameTextField.topAnchor.constraint(equalTo: addEventView.dateTextField.bottomAnchor, constant: 16).isActive = true
+        addEventView.locationNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -42).isActive = true
+        addEventView.locationNameTextField.leftAnchor.constraint(equalTo: addEventView.locationIcon.rightAnchor, constant: 8).isActive = true
+        addEventView.locationNameTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         //Location Addres Label
-        view.addSubview(aeView.locationAddressTextView)
-        aeView.locationAddressTextView.topAnchor.constraint(equalTo: aeView.locationNameTextField.bottomAnchor, constant: 4).isActive = true
-        aeView.locationAddressTextView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -42).isActive = true
-        aeView.locationAddressTextView.leftAnchor.constraint(equalTo: aeView.locationIcon.rightAnchor, constant: 4).isActive = true
-        aeView.locationAddressTextView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        view.addSubview(addEventView.locationAddressTextView)
+        addEventView.locationAddressTextView.topAnchor.constraint(equalTo: addEventView.locationNameTextField.bottomAnchor, constant: 4).isActive = true
+        addEventView.locationAddressTextView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -42).isActive = true
+        addEventView.locationAddressTextView.leftAnchor.constraint(equalTo: addEventView.locationIcon.rightAnchor, constant: 4).isActive = true
+        addEventView.locationAddressTextView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         //Save Event Button
-        view.addSubview(aeView.saveEventButton)
-        aeView.saveEventButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
-        aeView.saveEventButton.heightAnchor.constraint(equalToConstant: 66).isActive = true
-        aeView.saveEventButton.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
-        aeView.saveEventButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        view.addSubview(addEventView.saveEventButton)
+        addEventView.saveEventButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -16).isActive = true
+        addEventView.saveEventButton.heightAnchor.constraint(equalToConstant: 66).isActive = true
+        addEventView.saveEventButton.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
+        addEventView.saveEventButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         
         
@@ -132,12 +132,12 @@ class AddEventController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func userDidTappSaveButton(){
-        let name = aeView.eventTitleTextField.text
-        let description = aeView.descTextView.text
-        let date = aeView.dateTextField.text
-        let location = aeView.locationNameTextField.text! + aeView.locationAddressTextView.text
-        let image = aeView.addImageView.image
+    @objc func userDidTapSaveButton(){
+        let name = addEventView.eventTitleTextField.text
+        let description = addEventView.descTextView.text
+        let date = addEventView.dateTextField.text
+        let location = addEventView.locationNameTextField.text! + addEventView.locationAddressTextView.text
+        let image = addEventView.addImageView.image
         
         let event = EventObject(name: name, descriptionText: description, date: date, location: location, imageURL: image)
         print(event.name as Any)
@@ -187,10 +187,10 @@ extension AddEventController : UITextViewDelegate {
     
     
     func textViewDidChangeSelection(_ textView: UITextView) {
-        if aeView.descTextView.text.characters.count <= 0{
-            aeView.descriptionPlaceholderText.text = "Description"
+        if addEventView.descTextView.text.characters.count <= 0{
+            addEventView.descriptionPlaceholderText.text = "Description"
         }else{
-            aeView.descriptionPlaceholderText.text = ""
+            addEventView.descriptionPlaceholderText.text = ""
         }
     }
     
@@ -213,8 +213,8 @@ extension AddEventController : GMSPlacePickerViewControllerDelegate{
         let name = place.name
         guard let address = place.formattedAddress else {return}
         
-        aeView.locationNameTextField.text = "\(name)"
-        aeView.locationAddressTextView.text = "\(address)"
+        addEventView.locationNameTextField.text = "\(name)"
+        addEventView.locationAddressTextView.text = "\(address)"
         viewController.dismiss(animated: true, completion: nil)
     }
     
@@ -242,7 +242,7 @@ extension AddEventController : GMSPlacePickerViewControllerDelegate{
                 // TODO: handle the error.
                 print("Error: \(error.localizedDescription)")
             } else {
-                self.aeView.addImageView.image = photo;
+                self.addEventView.addImageView.image = photo;
             }
         })
     }

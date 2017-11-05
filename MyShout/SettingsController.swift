@@ -20,7 +20,7 @@ class SettingsController: NSObject, UICollectionViewDataSource, UICollectionView
         
     }
     
-    let cellID = "cellID"
+    let cellID = "settingsCell"
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -88,7 +88,7 @@ class SettingsController: NSObject, UICollectionViewDataSource, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? SettingsCell
         
         let setting = networkCall.settings[indexPath.row]
-        cell?.settingOneLabel.text = setting.name
+        cell?.settingTitleLabel.text = setting.name
         cell?.settingsImageView.image = setting.image
         
         return cell!
@@ -119,16 +119,18 @@ class SettingsController: NSObject, UICollectionViewDataSource, UICollectionView
             
         }) { (completed: Bool) in
             
-            let sellectedCell = collectionView.cellForItem(at: indexPath)! as! SettingsCell
+            let selectedCell = collectionView.cellForItem(at: indexPath)! as! SettingsCell
             
-            if sellectedCell.settingOneLabel.text == "Cancel"{
+            if selectedCell.settingTitleLabel.text == "Cancel"{
                 self.handleDismissMenu()
-            }else{
-                
-                self.homeController?.navigationController?.pushViewController((self.homeController?.dummyController)!, animated: true)
-                self.homeController?.dummyController.title = sellectedCell.settingOneLabel.text
+            }else if selectedCell.settingTitleLabel.text == "Login"{
+                self.homeController?.navigationController?.pushViewController(LoginController(), animated: true)
                 self.homeController?.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
-                self.homeController?.dummyController.view.backgroundColor = UIColor.Colors.darkGrey
+            }else{
+                self.homeController?.navigationController?.pushViewController((self.homeController?.detailSettingsController)!, animated: true)
+                self.homeController?.detailSettingsController.title = selectedCell.settingTitleLabel.text
+                self.homeController?.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+                self.homeController?.detailSettingsController.view.backgroundColor = UIColor.Colors.darkGrey
             }
             
         }

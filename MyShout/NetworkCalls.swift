@@ -35,12 +35,14 @@ class NetworkCalls {
     let settingTwo = SettingsObject(name: "Contact Support", image: #imageLiteral(resourceName: "contact"))
     let settingThree = SettingsObject(name: "Report Issue", image: #imageLiteral(resourceName: "danger"))
     let settingFour = SettingsObject(name: "Cancel", image: #imageLiteral(resourceName: "multiply"))
+    let settingFive = SettingsObject(name: "Login", image: #imageLiteral(resourceName: "web-log-in"))
     
     func getSettingsList(){
         settings.append(settingOne)
         settings.append(settingTwo)
         settings.append(settingThree)
         settings.append(settingFour)
+        settings.append(settingFive)
     }
     
     var HomeMenuItems = [HomeMenuObject]()
