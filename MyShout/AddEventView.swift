@@ -100,7 +100,7 @@ class AddEventView: UIView {
         textField.font = UIFont(name: "Futura-bold", size: 20)
         textField.attributedPlaceholder = NSAttributedString(string:"Location", attributes:[NSAttributedStringKey.foregroundColor: UIColor.Colors.lightGrey])
         textField.layer.sublayerTransform = CATransform3DMakeTranslation(8, 0, 0)
-        
+        textField.addTarget(self, action: #selector(AddEventController.getUsersLocation), for: .allTouchEvents)
         
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -113,9 +113,6 @@ class AddEventView: UIView {
         textView.layer.sublayerTransform = CATransform3DMakeTranslation(8, 0, 0)
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
-        
-        
-        
         
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView

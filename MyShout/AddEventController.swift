@@ -10,23 +10,17 @@ import UIKit
 import GooglePlaces
 import GooglePlacePicker
 
-let aeView = AddEventView()
-
 class AddEventController: UIViewController {
     
+    let aeView = AddEventView()
     let picker = UIDatePicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupNavBarItems()
-        view.backgroundColor = UIColor.white
-        aeView.descTextView.delegate = self
         createDatePicker()
-        
-        aeView.locationNameTextField.addTarget(self, action: #selector(getUsersLocation), for: .allTouchEvents)
-        
-        
+        aeView.descTextView.delegate = self
     }
     
     func createDatePicker(){
@@ -53,6 +47,9 @@ class AddEventController: UIViewController {
     }
     
     func setupViews(){
+        
+        
+        view.backgroundColor = UIColor.white
 
         //Image View
         view.addSubview(aeView.addImageView)
@@ -245,7 +242,7 @@ extension AddEventController : GMSPlacePickerViewControllerDelegate{
                 // TODO: handle the error.
                 print("Error: \(error.localizedDescription)")
             } else {
-                aeView.addImageView.image = photo;
+                self.aeView.addImageView.image = photo;
             }
         })
     }

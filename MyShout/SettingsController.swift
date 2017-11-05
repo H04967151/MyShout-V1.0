@@ -8,9 +8,9 @@
 
 import UIKit
 
-let networkCall = NetworkCalls()
-
 class SettingsController: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+    
+    let networkCall = NetworkCalls()
     
     override init() {
         super.init()
@@ -73,7 +73,7 @@ class SettingsController: NSObject, UICollectionViewDataSource, UICollectionView
             UIView.animate(withDuration: 0.3, animations: {
                 self.blackView.alpha = 0
                 self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: self.height)
-                networkCall.settings.removeAll()
+                self.networkCall.settings.removeAll()
             })
         }
     }
@@ -113,7 +113,7 @@ class SettingsController: NSObject, UICollectionViewDataSource, UICollectionView
                 UIView.animate(withDuration: 0.3, animations: {
                     self.blackView.alpha = 0
                     self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: self.height)
-                    networkCall.settings.removeAll()
+                    self.networkCall.settings.removeAll()
                 })
             }
             

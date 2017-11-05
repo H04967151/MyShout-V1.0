@@ -9,11 +9,11 @@
 import UIKit
 import SafariServices
 
-private let reuseIdentifier = "HomeCell"
-let settingsController = SettingsController()
-
-
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
+    let reuseIdentifier = "HomeCell"
+    let settingsController = SettingsController()
+    let networkCall = NetworkCalls()
 
     override func viewDidLoad() {
         super.viewDidLoad()

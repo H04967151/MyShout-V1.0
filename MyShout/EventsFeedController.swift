@@ -8,10 +8,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "cellID2"
+
 
 class EventsFeedController: UICollectionViewController, UICollectionViewDelegateFlowLayout, EventCellDelegate {
     
+    let reuseIdentifier = "evenstFeedCell"
     let networkCall = NetworkCalls()
     let detailEventController = DetailEventController()
     
