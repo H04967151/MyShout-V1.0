@@ -1,0 +1,6 @@
+framework module Pods_MyShout {
+  umbrella header "Pods-MyShout-umbrella.h"
+
+  export *
+  module * { export * }
+}
