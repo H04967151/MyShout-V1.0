@@ -34,8 +34,8 @@ class NetworkCalls {
     let settingOne = SettingsObject(name: "Settings", image: #imageLiteral(resourceName: "settings"))
     let settingTwo = SettingsObject(name: "Contact Support", image: #imageLiteral(resourceName: "contact"))
     let settingThree = SettingsObject(name: "Report Issue", image: #imageLiteral(resourceName: "danger"))
-    let settingFour = SettingsObject(name: "Cancel", image: #imageLiteral(resourceName: "multiply"))
-    let settingFive = SettingsObject(name: "Login", image: #imageLiteral(resourceName: "web-log-in"))
+    let settingFour = SettingsObject(name: "Sign in - Sign Out", image: #imageLiteral(resourceName: "web-log-in"))
+    let settingFive = SettingsObject(name: "Cancel", image: #imageLiteral(resourceName: "multiply"))
     
     func getSettingsList(){
         settings.append(settingOne)

@@ -123,7 +123,7 @@ class SettingsController: NSObject, UICollectionViewDataSource, UICollectionView
             
             if selectedCell.settingTitleLabel.text == "Cancel"{
                 self.handleDismissMenu()
-            }else if selectedCell.settingTitleLabel.text == "Login"{
+            }else if selectedCell.settingTitleLabel.text == "Sign in - Sign Out"{
                 self.homeController?.navigationController?.pushViewController(LoginController(), animated: true)
                 self.homeController?.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
             }else{

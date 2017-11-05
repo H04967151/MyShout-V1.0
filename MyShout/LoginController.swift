@@ -19,8 +19,7 @@ class LoginController: UIViewController {
     
     func setupViews(){
         view.backgroundColor = UIColor.Colors.darkGrey
-        navigationController
-        title = "Login"
+        title = "Sign in - Sign Out"
         
         //Twitter Button
         view.addSubview(loginView.twitterLoginButton)
